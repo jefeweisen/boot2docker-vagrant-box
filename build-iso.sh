@@ -6,7 +6,7 @@
 set -e
 set -x
 
-B2D_URL="https://github.com/boot2docker/boot2docker/releases/download/v1.3.0/boot2docker.iso"
+B2D_URL="https://github.com/boot2docker/boot2docker/releases/download/v1.6.0/boot2docker.iso"
 
 apt-get -y update
 apt-get install -y genisoimage
@@ -69,5 +69,5 @@ mv boot newiso
 popd
 mkisofs -l -J -R -V b2d-vagrant -no-emul-boot -boot-load-size 4 \
  -boot-info-table -b boot/isolinux/isolinux.bin \
- -c boot/isolinux/boot.cat -o boot2docker-vagrant.iso /tmp/newiso
+ -c boot/isolinux/boot.cat -o boot2docker-vagrant_1-6-0.iso /tmp/newiso
 rm -rf /tmp/newiso

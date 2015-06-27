@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "virtualbox-iso",
-        "iso_url": "boot2docker-vagrant.iso",
+        "iso_url": "boot2docker-vagrant_1-6-0.iso",
         "iso_checksum_type": "none",
         "boot_wait": "5s",
         "guest_additions_mode": "attach",
@@ -11,7 +11,7 @@
         "shutdown_command": "sudo poweroff"
     }, {
         "type": "vmware-iso",
-        "iso_url": "boot2docker-vagrant.iso",
+        "iso_url": "boot2docker-vagrant_1-6-0.iso",
         "iso_checksum_type": "none",
         "boot_wait": "5s",
         "guest_os_type": "other3xlinux-64",
@@ -20,7 +20,7 @@
         "shutdown_command": "sudo poweroff"
     }, {
         "type": "parallels-iso",
-        "iso_url": "boot2docker-vagrant.iso",
+        "iso_url": "boot2docker-vagrant_1-6-0.iso",
         "iso_checksum_type": "none",
         "boot_wait": "5s",
         "guest_os_distribution": "linux",
@@ -36,8 +36,8 @@
 
     "post-processors": [{
         "type": "vagrant",
-        "include": ["boot2docker-vagrant.iso"],
+        "include": ["boot2docker-vagrant_1-6-0.iso"],
         "vagrantfile_template": "vagrantfile.tpl",
-        "output": "boot2docker_{{.Provider}}.box"
+        "output": "boot2docker_{{.Provider}}_1-6-0.box"
     }]
 }
